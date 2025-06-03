@@ -128,7 +128,7 @@ int main() {
         printf("%s", buffer_validados[i]);
     }
 
-    printf("\nTiempo de ejecución: %.2f ms\n", tiempo);
+    printf("\nTiempo de ejecucion: %.2f ms\n", tiempo);
 
     for (int i = 0; i < cantidad; i++) {
         free(buffer1[i]);

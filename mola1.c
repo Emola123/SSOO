@@ -89,7 +89,7 @@ int main() {
 
     gettimeofday(&fin, NULL);
     double tiempo = (fin.tv_sec - inicio.tv_sec) * 1000.0 + (fin.tv_usec - inicio.tv_usec) / 1000.0;
-    printf("\nTiempo de ejecución: %.2f ms\n", tiempo);
+    printf("\nTiempo de ejecucion: %.2f ms\n", tiempo);
 
     for (int i = 0; i < cantidad; i++) {
         free(buffer1[i]);
@@ -146,14 +146,14 @@ void* etapa2(void* arg) {
         char linea[LINEAS];
         strcpy(linea, buffer2[i]);
 
-        char* token_monto = strrchr(linea, ':');
-        if (!token_monto || strlen(token_monto) <= 1) {
+        char* monto = strrchr(linea, ':');
+        if (!monto || strlen(monto) <= 1) {
             pthread_mutex_unlock(&mutex2);
             continue;
         }
 
-        double monto = atof(token_monto + 1);
-        if (monto > 0 && monto <= 10000) {
+        double monto1 = atof(monto + 1);
+        if (monto1 > 0 && monto1 <= 10000) {
             strcpy(buffer3[cont3], buffer2[i]);
             cont3++;
         }
